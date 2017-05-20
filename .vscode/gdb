@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+docker run --rm -i -v $PWD:$PWD --device /dev/ttyUSB0 esp-open-sdk /opt/esp/xtensa-lx106-elf/bin/xtensa-lx106-elf-gdb "$@"

@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ESP8266",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/debug/app.out",
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": false,
+            "miDebuggerPath": "${workspaceRoot}/.vscode/gdb",
+            "setupCommands": [
+                { "text": "set substitute-path /home ${workspaceRoot}" },
+                { "text": "set remote hardware-breakpoint-limit 1" },
+                { "text": "set remote hardware-watchpoint-limit 1" },
+                { "text": "set debug xtensa 4" },
+                { "text": "set serial baud 115200" },
+                { "text": "target remote /dev/ttyUSB0" }
+            ],
+            "linux": {
+                "MIMode": "gdb"
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "MIMode": "gdb"
+            }
+        }
+    ]
+}
